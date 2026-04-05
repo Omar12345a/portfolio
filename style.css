@@ -1,0 +1,340 @@
+/* Reset et styles de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --matrix-green: #0f0;
+    --matrix-dark: #000;
+    --matrix-glow: 0 0 10px #0f0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+    color: var(--matrix-green);
+    background-color: var(--matrix-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Navigation et Logo */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--matrix-green);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-circle {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: 2px solid var(--matrix-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    color: var(--matrix-green);
+    text-transform: uppercase;
+    box-shadow: var(--matrix-glow);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+.eclipse-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; /* Si tu veux un cercle parfait */
+    object-fit: cover; /* Assure que l'image couvre l'espace */
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--matrix-green);
+    text-decoration: none;
+    font-weight: 500;
+    text-shadow: 0 0 5px var(--matrix-green);
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    text-shadow: 0 0 10px var(--matrix-green);
+    transform: scale(1.05);
+}
+
+/* Sections communes */
+.section {
+    padding: 5rem 0;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.95);
+    overflow: hidden;
+}
+
+.section h2 {
+    color: var(--matrix-green);
+    text-align: center;
+    margin-bottom: 3rem;
+    text-shadow: var(--matrix-glow);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--matrix-dark);
+    padding-top: 5rem;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.profile-image {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--matrix-green);
+    box-shadow: var(--matrix-glow);
+    margin: 0 auto 2rem;
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) sepia(0.3) hue-rotate(70deg);
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: var(--matrix-glow);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+.hero-text p {
+    font-size: 1.25rem;
+    color: #0f0;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 5px var(--matrix-green);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--matrix-green);
+    background-color: rgba(0, 20, 0, 0.7);
+    color: var(--matrix-green);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    margin: 0.5rem;
+    text-shadow: 0 0 5px var(--matrix-green);
+}
+
+.btn:hover {
+    background-color: rgba(0, 40, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Sections spécifiques */
+.about-card, .expertise-card, .certification-card {
+    background-color: rgba(0, 20, 0, 0.7);
+    border: 1px solid var(--matrix-green);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover, .expertise-card:hover, .certification-card:hover {
+    background-color: rgba(0, 40, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Certifications Section */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.certification-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.certification-image {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* Ratio 16:9 */
+    overflow: hidden;
+}
+
+.certification-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8) sepia(0.3) hue-rotate(70deg);
+    border-bottom: 1px solid var(--matrix-green);
+}
+
+.certification-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.certification-content h3 {
+    color: var(--matrix-green);
+    font-size: 1.25rem;
+    text-shadow: var(--matrix-glow);
+}
+
+.certification-content .organization {
+    color: var(--matrix-green);
+    opacity: 0.8;
+}
+
+.certification-content .description {
+    color: var(--matrix-green);
+    opacity: 0.7;
+}
+
+/* Contact Section */
+#contact {
+    position: relative;
+    background-color: var(--matrix-dark);
+    overflow: hidden;
+}
+
+.contact-links {
+    max-width: 500px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: rgba(0, 20, 0, 0.7);
+    border: 1px solid var(--matrix-green);
+    border-radius: 0.5rem;
+    text-decoration: none;
+    color: var(--matrix-green);
+    text-shadow: 0 0 5px var(--matrix-green);
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    background-color: rgba(0, 40, 0, 0.8);
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 2rem 0;
+    border-top: 1px solid var(--matrix-green);
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.copyright {
+    color: var(--matrix-green);
+    text-shadow: 0 0 5px var(--matrix-green);
+}
+
+/* Animations */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #0f0, 0 0 10px #0f0, 0 0 15px #0f0;
+    }
+    to {
+        text-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
+    }
+}
+
+.matrix-rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+    }
+}
